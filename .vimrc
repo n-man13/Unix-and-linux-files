@@ -17,8 +17,27 @@ inoremap {<CR>  {<CR>}<Esc>O
 inoremap {{     {
 inoremap {}     {}
 
+" add closing bracket
+inoremap [      []<Left>
+inoremap [<CR>  [<CR>]<Esc>O
+inoremap [[     [
+inoremap []     []
+
+" add closing parenthesis
+inoremap (      ()<Left>
+inoremap (<CR>  (<CR>)<Esc>O
+inoremap ((     (
+inoremap ()     ()
+
 " add closing apostrophe
-inoremap <expr> ' strpart(getline('.'), col('.')-1, 1) == "\'" ? "\<Right>" : "\'\'\<Left>"
+inoremap '     ''<Left>
+inoremap '<CR>  '<CR>"<Esc>O
+inoremap ''     ''
+
+" add closing double quote
+inoremap "      ""<Left>
+inoremap "<CR>  "<CR>"<Esc>O
+inoremap ""     ""
 
 " Delete trailing white space on save
 func! DeleteTrailingWS()
@@ -27,5 +46,3 @@ func! DeleteTrailingWS()
   exe "normal `z"
 endfunc
 autocmd BufWrite *.py :call DeleteTrailingWS()
-
-
