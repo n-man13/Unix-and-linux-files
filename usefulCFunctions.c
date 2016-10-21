@@ -10,9 +10,13 @@ char * readInput(char finalChar){
   char *pwork = str;
   
   while (*pwork != finalChar){
-    str = realloc(str,strlen(str)+1;
+    str = realloc(str,strlen(str)+1);
     *pwork = getchar();
     pwork++;
   }
-
+  
+  str = realloc(str, strlen(str) + 1);
+  pwork++;
+  pwork = '\0';
+  return str;
 }
